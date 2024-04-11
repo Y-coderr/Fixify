@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -58,11 +59,11 @@ dependencies {
     implementation ("com.github.tintinscorpion:Dual-color-Polyline-Animation:1.0.0")
     implementation ("com.addisonelliott:segmented-button:2.0.0")
     implementation ("com.paypal.sdk:paypal-android-sdk:2.21.0")
-    implementation ("com.onesignal:OneSignal:4.0.0")
-    implementation ("com.stripe:stripe-android:17.0.0")
+    implementation ("com.onesignal:OneSignal:5.1.7")
+    implementation ("com.stripe:stripe-android:20.40.3")
     implementation ("com.github.tintinscorpion:Dual-color-Polyline-Animation:{latest_version}")
     implementation ("com.ncorti:slidetoact:0.11.0")
-
+    implementation ("com.github.tintinscorpion:Dual-color-Polyline-Animation:{latest_version}")
 
 
 }

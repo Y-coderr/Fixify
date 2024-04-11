@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "182153326062",
+    "project_id": "fixify-742b4",
+    "storage_bucket": "fixify-742b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182153326062:android:8341df19dc62512b1b72ff",
+        "android_client_info": {
+          "package_name": "com.example.fixify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxTUZiqZC-2-zjI6t1VLWRmF4FFdb8d5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

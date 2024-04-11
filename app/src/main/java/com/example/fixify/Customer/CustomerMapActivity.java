@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -34,7 +35,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -96,8 +96,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.logicbeanzs.uberpolylineanimation.MapAnimator;
-import com.ncorti.slidetoact.SlideToActView;
+import com.logicbeanzs.uberpolylineanimation.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -127,7 +126,7 @@ public class CustomerMapActivity extends AppCompatActivity
 
     private FusedLocationProviderClient mFusedLocationClient;
 
-    private SlideToActView mRequest;
+    private Button mRequest;
 
     private LocationObject pickupLocation, currentLocation, destinationLocation;
 
@@ -180,14 +179,14 @@ public class CustomerMapActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_customer);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         mCurrentRide = new RideObject(CustomerMapActivity.this, null);
 
         drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer , R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -237,7 +236,7 @@ public class CustomerMapActivity extends AppCompatActivity
             mCurrentRide.cancelRide();
             endRide();
         });
-        mRequest.setOnSlideCompleteListener(v -> startRideRequest());
+        mRequest.setOnClickListener(v -> startRideRequest());
         mCancel.setOnClickListener(v -> {
             bottomSheetStatus = 0;
             mCurrentRide.cancelRide();
@@ -421,7 +420,7 @@ public class CustomerMapActivity extends AppCompatActivity
                         break;
                     case 1:
                         bottomSheetStatus = 2;
-                        mRequest.resetSlider();
+//                        mRequest.resetSlider();
                         mRadioLayout.setVisibility(View.VISIBLE);
                         mLocation.setVisibility(View.GONE);
                         mLooking.setVisibility(View.GONE);
@@ -1241,7 +1240,7 @@ public class CustomerMapActivity extends AppCompatActivity
 
             List<LatLng> directionPositionList = route.getLegList().get(0).getDirectionPoint();
 
-            MapAnimator.getInstance().animateRoute(mMap, directionPositionList);
+            MapAnimator.Instance().animateRoute(mMap, directionPositionList);
 
             setCameraWithCoordinationBounds(route);
         }

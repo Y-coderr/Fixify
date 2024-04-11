@@ -47,16 +47,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 cardImageResource = R.drawable.ic_visa;
                 break;
             case "American Express":
-                cardImageResource = R.drawable.ic_amex;
+                cardImageResource = R.drawable.ic_visa;
                 break;
             case "mastercard":
-                cardImageResource = R.drawable.ic_mastercard;
+                cardImageResource = R.drawable.ic_visa;
                 break;
             case "discover":
-                cardImageResource = R.drawable.ic_discover;
+                cardImageResource = R.drawable.ic_visa;
                 break;
             case "jcb":
-                cardImageResource = R.drawable.cio_ic_jcb;
+                cardImageResource = R.drawable.ic_visa;
                 break;
         }
         holder.mCard.setImageResource(cardImageResource);

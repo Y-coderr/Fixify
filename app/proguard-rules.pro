@@ -20,4 +20,10 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.logicbeanzs.uberpolylineanimation.**
+#-keep class com.logicbeanzs.uberpolylineanimation.**
+
+-keepclassmembers class com.logicbeanzs.uberpolylineanimation.* {
+  <fields>;
+  <init>();
+  <methods>;
+}
